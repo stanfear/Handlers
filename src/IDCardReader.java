@@ -26,6 +26,10 @@ public class IDCardReader extends GenericHandler {
 	@Override
 	public void onActivation(Event event, Map<String, Object> config) 
 	{
+		// if the handler have been wrong configured (not set on a good event)
+		if(!(event instanceof PlayerInteractEvent))
+			return;
+		
 		// casting the event to have all necessary data
 		PlayerInteractEvent castedEvent = (PlayerInteractEvent) event;
 		
@@ -35,13 +39,17 @@ public class IDCardReader extends GenericHandler {
 		Location loc = cardReader.getLocation();
 		
 		// getting the IDcard (in the hand of the player)
-		SpoutItemStack inHandItem = (SpoutItemStack) castedEvent.getItem();
+		SpoutItemStack inHandItem = new SpoutItemStack(castedEvent.getItem());
 		
 		// getting the identifier of the IDCard as it is set in the config
 		Material idCard = this.plugin.getSmpManager().getMaterial((Integer) config.get("IDcardName"));
 
+		// check if the idcard is a MM item (this handler cannot support vanilla item (for now))
+		if(idCard == null)
+			return;
+		
 		// check if the item in hand is the card
-		if (!(inHandItem instanceof CustomItem))
+		if(!(inHandItem instanceof CustomItem))
 			return;
 		// if the item is not the card, we stop there
 		if(inHandItem != idCard)
@@ -87,11 +95,12 @@ public class IDCardReader extends GenericHandler {
 				
 				// first, open and schedule the closing
 				door.setOpen(true);
+				
 				this.plugin.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable() {
 					  public void run() {
 						  door.setOpen(false);
 					  }
-					}, 60L);
+					}, delay);
 				
 				
 				// now, we go on all near block except the one we came from
