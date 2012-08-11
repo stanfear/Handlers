@@ -81,26 +81,32 @@ public class IDCardReader extends GenericHandler {
 		// check if the block is an openable block (i.e. a door, a trapdoor, a gate, ...)
 		if(loc.getBlock() instanceof Openable)
 		{
-			// first, open and schedule the closing
 			final Openable door = (Openable) loc.getBlock();
-			door.setOpen(true);
-			this.plugin.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable() {
-				  public void run() {
-					  door.setOpen(false);
-				  }
-				}, 60L);
-			
-			if(!locFrom.equals(loc.add(1, 0, 0)))
-				openRec(loc.add(1, 0, 0), loc, delay);
-			
-			if(!locFrom.equals(loc.add(-1, 0, 0)))		
-				openRec(loc.add(-1, 0, 0), loc, delay);
-			
-			if(!locFrom.equals(loc.add(0, 0, 1)))
-				openRec(loc.add(0, 0, 1), loc, delay);
-			
-			if(!locFrom.equals(loc.add(0, 0, -1)))
-				openRec(loc.add(0, 0, -1), loc, delay);
+			if(!door.isOpen()) // if the door is already open, we might already have open it, we won't reopen it !
+			{
+				
+				// first, open and schedule the closing
+				door.setOpen(true);
+				this.plugin.getServer().getScheduler().scheduleSyncDelayedTask(this.plugin, new Runnable() {
+					  public void run() {
+						  door.setOpen(false);
+					  }
+					}, 60L);
+				
+				
+				// now, we go on all near block except the one we came from
+				if(!locFrom.equals(loc.add(1, 0, 0)))
+					openRec(loc.add(1, 0, 0), loc, delay);
+				
+				if(!locFrom.equals(loc.add(-1, 0, 0)))		
+					openRec(loc.add(-1, 0, 0), loc, delay);
+				
+				if(!locFrom.equals(loc.add(0, 0, 1)))
+					openRec(loc.add(0, 0, 1), loc, delay);
+				
+				if(!locFrom.equals(loc.add(0, 0, -1)))
+					openRec(loc.add(0, 0, -1), loc, delay);
+			}
 		}
 	}
 
