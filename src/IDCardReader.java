@@ -1,3 +1,19 @@
+/* 
+ * 2012 Tristan Roche (Stan_fear)
+ * 
+ * this file is under Creative Commons By-Sa licence
+ *  * 
+ * This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License (Creative Commons By-Sa).
+ * To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ 
+ * or send a letter to 
+ * 		Creative Commons,
+ * 		444 Castro Street,
+ * 		Suite 900, Mountain View,
+ *  	California, 94041, USA.
+ *  
+ */
+
+
 import java.util.Map;
 
 import org.bukkit.Location;
