@@ -24,6 +24,7 @@
 import java.util.Map;
 
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.event.Event;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.material.Openable;
@@ -36,7 +37,7 @@ import net.morematerials.MoreMaterials;
 import net.morematerials.handlers.GenericHandler;
 
 
-public class IDCardReader extends GenericHandler {
+public class IDCardReaderHandler extends GenericHandler {
 	
 	private MoreMaterials plugin;
 	
@@ -77,7 +78,8 @@ public class IDCardReader extends GenericHandler {
 		// if the item is not the card, we stop there
 		if(inHandItem != idCard)
 			return;
-
+		World world = cardReader.getWorld();
+		world.getBlockAt(cardReader.getLocation().add(0, 1, 0));
 		/**
 		 * we now know that the player has the right item in his hand.
 		 */
