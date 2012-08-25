@@ -1,0 +1,53 @@
+ * 2012, Tristan Roche (Stan_fear)
+ *
+ * This file is under Creative Commons By-Sa licence
+ * This work (including this file and the associated Handler) is licensed under the
+ * Creative Commons Attribution-ShareAlike 3.0 Unported License (Creative Commons By-Sa).
+ * To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ 
+ * or send a letter to 
+ * 		Creative Commons,
+ * 		444 Castro Street,
+ * 		Suite 900, Mountain View,
+ *  	California, 94041, USA.
+
+
+this file will help you configure the associated handler
+into the Spout Plugin named "MoreMaterials" (v1.8)
+
+This file tell how to use the handler 
+ ----- PotionEffectHandler v1.0 -----
+originally programmed by Stan_Fear
+
+ > what is it meant to do ?
+ 
+give to the interacting player the configured effect
+spawning particles with configured color and type
+ 
+ > How to use ?
+ 
+1/ put the handler in your handler folder (serveurRoot/plugins/MoreMaterials/Handlers/)
+
+2/ If you are Not a SMP developer :
+	put all your SMP into the materials folder 
+	(serveurRoot/plugins/MoreMaterials/Materials/)
+		You're done !
+
+   If you are a SMP developer : 
+    add and modify the following into your Yaml (<text> are meant to be replaced):
+
+Handlers:
+__<event>: #name of the event that will trigger the handler
+____- Name: "IDCardReader"
+______amplifier: # allow you to "power up" the effects of the potion (don't know how much is default)
+______duration: # how long you want the effect to last (in bukkit ticks (20 ticks = 1 s))
+______potionType: <blindness|confusion|damage_resistance|fast_digging-harm|
+                   heal|hunger|increase_damage|invisibility|jump|night_vision|
+                   poison|regeneration|slow|slow_digging|speed|water_breathing|weakness>	
+                   # what effect you want to apply to the player		
+______particleType: <Bubble|Cloud|Crit|DepthSuspend|DripLava|DripWater|
+                     EnchantmentTable|Explode|Flame|FootStep|Heart|LargeSmoke|
+                     Lava|MagicCrit|MobSpell|Note|Portal|RedDust|Slime|Smoke|
+                     SnowBallPoof|SnowShovel|Spell|Splash|Suspended|TownAura|Unknown>
+                     # the particles type
+______particleColor: <White|Black|Blue|Green|Red|Cyan|Yellow|Magenta>
+                     # the color of the particles
