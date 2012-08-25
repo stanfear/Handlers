@@ -18,7 +18,10 @@ This file tell how to use the handler
 		----- LaserDrillHandler v1.0 -----
 originally programmed by Stan_Fear
 
-
+ > what is it meant to do ?
+ 
+shoot an very fast fireBall to make the targeted block explode 
+ 
  > How to use ?
  
 1/ put the handler in your handler folder (serveurRoot/plugins/MoreMaterials/Handlers/)

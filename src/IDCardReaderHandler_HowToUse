@@ -18,7 +18,11 @@ This file tell how to use the handler
 		----- IDCardReader v1.0 -----
 originally programmed by Stan_Fear
 
-
+ > what is it meant to do ?
+ 
+allow you to open near door while clicking on the configured block (the one that uses this handler)
+with a custom item (configured) 
+ 
  > How to use ?
  
 1/ put the handler in your handler folder (serveurRoot/plugins/MoreMaterials/Handlers/)
