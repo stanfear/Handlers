@@ -1,9 +1,3 @@
-/**
- * @version 1.0
- * @author tristan Roche (Stan_fear)
- * 
- * for MoreMaterials 1.8 and later
- */
 
 import java.util.Map;
 
@@ -15,11 +9,17 @@ import org.getspout.spoutapi.player.SpoutPlayer;
 import net.morematerials.MoreMaterials;
 import net.morematerials.handlers.GenericHandler;
 
-
+/**
+ * @version 1.0
+ * @author tristan Roche (Stan_fear)
+ * 
+ * for MoreMaterials 1.8 and later
+ */
 public class OpenGUIHandler extends GenericHandler {
 
 	@Override
 	public void init(MoreMaterials arg0) {
+		//TODO
 	}
 
 	@Override
@@ -68,6 +68,7 @@ public class OpenGUIHandler extends GenericHandler {
 
 	@Override
 	public void shutdown() {
+		//TODO
 	}
 
 }

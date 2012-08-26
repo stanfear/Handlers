@@ -1,10 +1,3 @@
-/**
- * @version 1.0
- * @author tristan Roche (Stan_fear)
- * 
- * for MoreMaterials 1.8 and later
- */
-
 import java.util.Map;
 
 import org.bukkit.entity.Player;
@@ -25,15 +18,14 @@ import net.morematerials.handlers.GenericHandler;
  * 
  * for MoreMaterials 1.8 and later
  */
-
-
 public class PotionEffectHandler extends GenericHandler {
 
 	@Override
 	public void init(MoreMaterials arg0) {
+		//TODO
 	}
 
-	@SuppressWarnings("nls")
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onActivation(Event event, Map<String, Object> config) {
 		
@@ -296,11 +288,12 @@ public class PotionEffectHandler extends GenericHandler {
   		particleEntity.setMaxAge(40).setAmount(15).setGravity(0.9F);
   		particleEntity.spawn();
 		
-		// no we're over !
+		// now we're over !
 	}
 
 	@Override
-	public void shutdown() {		
+	public void shutdown() {
+		//TODO
 	}
 
 }

@@ -1,9 +1,4 @@
-/**
- * @version 1.0
- * @author tristan Roche (Stan_fear)
- * 
- * for MoreMaterials 1.8 and later
- */
+
 
 import java.util.Map;
 
@@ -16,7 +11,12 @@ import org.bukkit.util.Vector;
 import net.morematerials.MoreMaterials;
 import net.morematerials.handlers.GenericHandler;
 
-
+/**
+ * @version 1.0
+ * @author tristan Roche (Stan_fear)
+ * 
+ * for MoreMaterials 1.8 and later
+ */
 public class LaserDrillHandler extends GenericHandler {
 
 	@Override

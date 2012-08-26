@@ -13,12 +13,7 @@
  *  
  */
 
-/**
- * @version 1.0
- * @author tristan Roche (Stan_fear)
- * 
- * for MoreMaterials 1.8 and later
- */
+
 
 
 import java.util.Map;
@@ -36,7 +31,12 @@ import org.getspout.spoutapi.material.Material;
 import net.morematerials.MoreMaterials;
 import net.morematerials.handlers.GenericHandler;
 
-
+/**
+ * @version 1.0
+ * @author tristan Roche (Stan_fear)
+ * 
+ * for MoreMaterials 1.8 and later
+ */
 public class IDCardReaderHandler extends GenericHandler {
 	
 	private MoreMaterials plugin;
